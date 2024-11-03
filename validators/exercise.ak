@@ -1,13 +1,11 @@
+use cardano/address.{Credential, VerificationKey}
 use cardano/assets.{PolicyId}
 use cardano/transaction.{OutputReference, Transaction}
-use cardano/address.{VerificationKey}
-
 
 validator validate {
   mint(redeemer: Int, policy_id _policy_id: PolicyId, tx _tx: Transaction) {
     (redeemer != 42)?
   }
-
 
   spend(
     datum: Option<Data>,
@@ -21,8 +19,8 @@ validator validate {
           (data != 42)?
         } else if data is ByteArray {
           (data != "Hello, World!")?
-        } else if data is VerificationKey(hash) {
-          hash == "VerificationKeyHash"
+        } else if data is VerificationKey(hash): Credential {
+          (hash == "VerificationKeyHash")?
         } else {
           False
         }
