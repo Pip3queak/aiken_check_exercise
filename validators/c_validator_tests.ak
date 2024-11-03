@@ -69,7 +69,7 @@ test validator_test_3() {
     tx: transaction.placeholder,
   )
 }
-
+test
 
 /// Modify the VALIDATOR logic!
 test validator_t3_s1() {
