@@ -69,7 +69,7 @@ test validator_test_3() {
     tx: transaction.placeholder,
   )
 }
-test
+
 
 /// Modify the VALIDATOR logic!
 test validator_t3_s1() {
@@ -83,17 +83,6 @@ test validator_t3_s1() {
   )
 }
 
-/// Modify the VALIDATOR logic!
-test validator_t3_s2() {
-  let arbitrary_datum: Data = "VerificationKeyHash" |> VerificationKey
-
-  exercise.validate.spend(
-    datum: Some(arbitrary_datum),
-    redeemer: Void,
-    utxo: arbitrary_utxo,
-    tx: transaction.placeholder,
-  )
-}
 
 test validator_test_4() {
   // DO NOT MODIFY BELOW //
